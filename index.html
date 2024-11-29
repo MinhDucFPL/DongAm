@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Gửi Hơi Ấm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+    <style>
+        /* Custom CSS */
+        .logo-img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .header-info a {
+            color: #333;
+            font-size: 1.1rem;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .header-info a:hover {
+            color: #ff7b00;
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            color: #333;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #ff7b00;
+        }
+
+        /* Header section */
+        .header-section {
+            background-color: #f8f9fa;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Section màu sắc phân biệt */
+        .section-1 {
+            padding: 10px 0;
+        }
+
+        .section-2 {
+            background-color: #e0f7fa;
+            padding: 50px 0;
+        }
+
+        .section-3 {
+            background-color: #c8e6c9;
+            padding: 50px 0;
+        }
+
+        .section-4 {
+            background-color: #ffe0b2;
+            padding: 50px 0;
+        }
+
+        /* Định nghĩa hiệu ứng fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Carousel images styling */
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 500px;
+        }
+
+        /* Thêm độ cao và chiều rộng cố định cho các sản phẩm */
+        .card {
+            width: 100%;
+            /* Đảm bảo các thẻ card chiếm hết chiều rộng của cột */
+            height: 150px;
+            /* Đặt chiều cao cố định cho mỗi item */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Đảm bảo hình ảnh không bị méo và giữ tỷ lệ */
+        .card-img-top {
+            height: 100px;
+            /* Đặt chiều cao cho hình ảnh */
+            object-fit: cover;
+            /* Đảm bảo hình ảnh phủ đầy thẻ mà không bị méo */
+            width: 100%;
+            /* Chiều rộng 100% của thẻ card */
+        }
+
+        /* Đặt chiều cao và khoảng cách của phần text bên dưới hình ảnh */
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Giới hạn chiều cao cho phần text để không bị tràn */
+        .card-title {
+            margin-top: -10px;
+            font-size: 0.9rem;
+            /* Tăng/giảm kích thước chữ nếu cần */
+        }
+
+        .card-text {
+            margin-top: -5px;
+            font-size: 0.8rem;
+            color: #888;
+            /* Màu sắc nhạt hơn cho giá */
+        }
+
+        #fundraising .col-md-6.text-left {
+            text-align: left;
+            /* Đảm bảo rằng văn bản căn lề trái */
+            padding-right: 30px;
+            /* Thêm một chút khoảng cách bên phải nếu cần */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="container-fluid py-3 header-section">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center logo-container">
+                <img src="images/Logo.jpg" alt="Logo CLB Tình Nguyện Xanh" class="logo-img">
+                <h3 class="ms-3 mb-0 animate__animated animate__fadeIn">Dự án Đông Ấm 2025</h3>
+            </div>
+            <div class="header-info">
+                <a href="#home" class="animate__animated animate__fadeIn">Trang Chủ</a>
+                <a href="#about" class="animate__animated animate__fadeIn">Giới Thiệu</a>
+                <a href="#location" class="animate__animated animate__fadeIn">Địa điểm</a>
+                <a href="#share" class="animate__animated animate__fadeIn">Chia Sẻ</a>
+                <a href="#donate" class="animate__animated animate__fadeIn">Quyên Góp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trang Chủ - Slideshow -->
+    <section id="home" class="container">
+        <div id="project-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/du_an/image_.jpg" alt="Dự án Đông Ấm 2025 - Hình 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/du_an/image_1.jpg" alt="Dự án Đông Ấm 2025 - Hình 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/du_an/image_3.jpg" alt="Dự án Đông Ấm 2025 - Hình 3">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#project-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#project-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Các Section khác với màu sắc phân biệt -->
+    <section id="about" class="section-1">
+        <div class="container mt-5">
+            <div class="row d-flex align-items-center">
+                <!-- Phần văn bản giới thiệu -->
+                <div class="col-lg-6 animate__animated animate__fadeInUp">
+                    <h2 class="section-title text-center mb-4">Giới Thiệu Dự Án Đông Ấm 2025</h2>
+                    <p class="intro-text text-justify">
+                        Chương trình "Đông Ấm 2025" là một hoạt động tình nguyện đầy ý nghĩa, được tổ chức thường niên
+                        bởi Câu lạc bộ Tình Nguyện Xanh thuộc Trường Đại học Hùng Vương. Dự án nhằm hỗ trợ các hộ gia
+                        đình có hoàn cảnh khó khăn, đặc biệt là các khu vực miền núi, vùng sâu vùng xa tại tỉnh Phú Thọ,
+                        giúp họ vượt qua những ngày đông lạnh giá bằng những món quà ấm áp và đầy tình thương.
+                    </p>
+                    <h4 class="section-title">Mục tiêu của Dự Án</h4>
+                    <ul class="intro-text">
+                        <li>Cung cấp các nhu yếu phẩm thiết yếu: Chăn, áo ấm, quần áo, tất, mũ, găng tay, mì tôm, gạo,
+                            mắm, muối,... cho bà con ở những vùng có điều kiện sống khó khăn.</li>
+                        <li>Tạo nên những công trình ý nghĩa: Các công trình thanh niên như xích đu cho trẻ em, nhà văn
+                            hóa, hay các hoạt động hỗ trợ cơ sở vật chất cho cộng đồng địa phương.</li>
+                        <li>Tổ chức các hoạt động giao lưu văn hóa: Tạo cơ hội cho bà con và tình nguyện viên giao lưu,
+                            sẻ chia, thắt chặt tình đoàn kết cộng đồng.</li>
+                    </ul>
+                    <h4 class="section-title">Thông điệp và mục tiêu</h4>
+                    <p class="intro-text text-justify">
+                        Với tinh thần "Tiếp lửa yêu thương - Sưởi ấm bản ngàn", chương trình mong muốn không chỉ mang
+                        lại hơi ấm về vật chất, mà còn là sự kết nối tình cảm, lan tỏa yêu thương trong cộng đồng, đặc
+                        biệt là giữa các thế hệ sinh viên và các nhà hảo tâm. Qua đó, góp phần làm ấm lòng bà con, giúp
+                        họ có một mùa Đông an lành và một cái Tết hạnh phúc, ấm áp.
+                    </p>
+                </div>
+
+                <!-- Phần hình ảnh giới thiệu -->
+                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                    <img style="width: 70%;" src="images/thuNgo.jpg" alt="Thư Ngỏ" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="location" class="section-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Carousel for Images -->
+            <div id="locationCarousel" class="carousel slide" data-bs-ride="carousel" style="flex-basis: 40%;">
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <img src="images/dia_diem/anh.jpg" class="d-block w-100" alt="Địa điểm 1">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <img src="images/dia_diem/anh1.jpg" class="d-block w-100" alt="Địa điểm 2">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <img src="images/dia_diem/anh2.jpg" class="d-block w-100" alt="Địa điểm 3">
+                    </div>
+                    <!-- Add more slides here... -->
+                    <div class="carousel-item">
+                        <img src="images/dia_diem/anh3.jpg" class="d-block w-100" alt="Địa điểm 4">
+                    </div>
+                    <!-- Continue with other images as needed -->
+                </div>
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#locationCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#locationCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <!-- Description Text on the Right -->
+            <div class="description" style="flex-basis: 55%; text-align: left;">
+                <h2>Địa Điểm Tổ Chức Dự Án Đông Ấm 2025</h2>
+                <p>Chương trình "Đông Ấm 2025" sẽ được triển khai tại Khu Náy, xã Yên Lương, huyện Thanh Sơn, tỉnh Phú
+                    Thọ – một trong những địa phương miền núi khó khăn, nơi nhiều hộ dân chủ yếu là người dân tộc Dao
+                    sinh sống. Đây là khu vực có điều kiện sống còn thiếu thốn và nhiều gia đình gặp khó khăn trong mùa
+                    Đông lạnh giá.</p>
+                <p>Với sự hỗ trợ từ các tình nguyện viên và các nhà hảo tâm, chương trình mong muốn mang đến hơi ấm về
+                    vật chất và tinh thần cho bà con nơi đây.</p>
+                <p><strong>Địa chỉ:</strong> Khu Náy, xã Yên Lương, huyện Thanh Sơn, tỉnh Phú Thọ.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="fundraising" class="section-3">
+        <div class="container text-center">
+            <h2>🔥 GÂY QUỸ MÙA ĐÔNG ẤM 2025 🔥</h2>
+
+            <!-- Nội dung mô tả ở bên trái -->
+            <div class="row align-items-center">
+                <div class="col-md-6 text-left">
+                    <p class="lead">
+                        💥 Là một hoạt động truyền thống của CLB Tình Nguyện Xanh, mỗi năm một lần chương trình Đông Ấm
+                        sẽ được thực hiện vào một ngày đông lạnh giá của mùa Đông. Đây là một hoạt động vô cùng ý nghĩa
+                        đối với CLB Tình Nguyện Xanh và đồng bào bà con có hoàn cảnh khó khăn 🤭
+                    </p>
+                    <p class="lead">
+                        🌈 Để góp phần thành công cho chương trình gây quỹ Đông Ấm 2025, CLB Tình Nguyện Xanh chính thức
+                        mở bán gian hàng gây quỹ với những đơn hàng sau đây:
+                    </p>
+                    <p class="lead mt-5">
+                        🫰🏻 Để đặt hàng, liên hệ trực tiếp vào page hoặc comment vào các bài đăng gây quỹ cho chúng
+                        mình nhé! Đơn hàng sẽ được chốt trước 5h các buổi chiều và free ship trong khuôn viên trường Đại
+                        học Hùng Vương.
+                    </p>
+
+                    <p class="lead">
+                        🥰 Hãy ghé thăm và ủng hộ gian hàng của chúng mình, cùng CLB tạo nên một mùa Đông ấm áp và lan
+                        tỏa yêu thương đến mọi người!
+                    </p>
+
+                    <p>
+                        #TNX
+                    </p>
+                </div>
+
+                <!-- Cột bên phải chứa các sản phẩm (mỗi hàng có 3 sản phẩm) -->
+                <div class="col-md-6">
+                    <!-- First row with 3 items -->
+                    <div class="row">
+                        <div class="col-4 mb-4">
+                            <div class="card">
+                                <img src="images/gian_hang/tau_hu.jpg" class="card-img-top" alt="Tàu hũ TC đường đen">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tàu hũ TC đường đen</h5>
+                                    <p class="card-text">#20k</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card">
+                                <img src="images/gian_hang/tao_pho_caramen.jpg" class="card-img-top"
+                                    alt="Tào phớ caramen">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tào phớ caramen</h5>
+                                    <p class="card-text">#15k</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card">
+                                <img src="images/gian_hang/sua_chua_mit.jpg" class="card-img-top" alt="Sữa chua mít">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sữa chua mít</h5>
+                                    <p class="card-text">#20k</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second row with 3 items -->
+                    <div class="row">
+                        <div class="col-4 mb-4">
+                            <div class="card">
+                                <img src="images/gian_hang/caramel_dua.jpg" class="card-img-top"
+                                    alt="Caramen dừa trân châu">
+                                <div class="card-body">
+                                    <h5 class="card-title">Caramen dừa trân châu</h5>
+                                    <p class="card-text">#20k</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card">
+                                <img src="images/gian_hang/che_buoi.jpg" class="card-img-top" alt="Chè bưởi">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chè bưởi</h5>
+                                    <p class="card-text">#15k</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card">
+                                <img src="images/gian_hang/tao_pho_thap_cam.jpg" class="card-img-top"
+                                    alt="Tào phớ thập cẩm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tào phớ thập cẩm</h5>
+                                    <p class="card-text">#15k</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third row with 3 items -->
+                    <div class="row">
+                        <div class="col-4 mb-4">
+                            <div class="card">
+                                <img src="images/gian_hang/dua_dam.jpg" class="card-img-top" alt="Dừa dầm truyền thống">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dừa dầm truyền thống</h5>
+                                    <p class="card-text">#20k</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card">
+                                <img src="images/gian_hang/sua_chua_dua_tran_chau.jpg" class="card-img-top"
+                                    alt="Sữa chua dừa trân châu">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sữa chua dừa trân châu</h5>
+                                    <p class="card-text">#20k</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card">
+                                <img src="images/gian_hang/caramel_nep_cam.jpg" class="card-img-top"
+                                    alt="Caramen nếp cẩm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Caramen nếp cẩm</h5>
+                                    <p class="card-text">#20k</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-inner">
+            </div>
+        </div>
+    </section>
+    <section class="container text-center" style="margin-top:20px ;padding-bottom: 20px;">
+        <div class="row">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <img src="images/duAn19k.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <div class="campaign-info">
+                    <h3>🌤️ GỬI HƠI ẤM - TRAO YÊU THƯƠNG 🌤️</h3>
+                    <h4>👉🏻 19K YÊU THƯƠNG 👈🏻</h4>
+
+                    <p class="lead">
+                        💓 Tình thương là tình cảm tốt đẹp của con người, được xuất phát từ tấm lòng, từ tâm tưởng mỗi
+                        người giúp đỡ người khác, không mong nhận lại điều gì. Đúng vậy, đôi khi chỉ là trao nhau tình
+                        thương nhỏ cũng đem lại hạnh phúc lớn cho người khác. Trong cuộc sống luôn thay đổi này, có rất
+                        nhiều mảnh đời bất hạnh cần chúng ta giúp đỡ.
+                    </p>
+
+                    <p class="lead">
+                        🌻 Hưởng ứng chiến dịch gây quỹ Đông Ấm 2025, CLB Tình Nguyện Xanh phát động một chương trình
+                        đặc biệt, đó là "19K YÊU THƯƠNG".
+                    </p>
+
+                    <p class="lead">
+                        🍃 Chương trình này thể hiện được tinh thần của dân tộc "Lá lành đùm lá rách". Với 19k này, các
+                        bạn đã góp phần vào việc giúp đỡ, sẻ chia những khó khăn với những mảnh đời còn cơ nhỡ, kém may
+                        mắn tại khu Náy, xã Yên Lương, huyện Thanh Sơn, tỉnh Phú Thọ. Sự yêu thương, giúp đỡ và ủng hộ
+                        của các bạn sẽ giúp những mảnh đời bất hạnh kia có nhiều hơn động lực để vươn lên. Và đặc biệt,
+                        cùng tiếp thêm sức mạnh tinh thần đối với những người làm chương trình.
+                    </p>
+
+                    <p class="lead">
+                        💓 "Triệu trái tim - Một tấm lòng", CLB Tình Nguyện Xanh hy vọng chiến dịch "19K YÊU THƯƠNG" sẽ
+                        được lan tỏa rộng hơn, nhận được nhiều sự ủng hộ, đồng hành của những tấm lòng hảo tâm, nhà tài
+                        trợ để Đông Ấm 2025 thành công rực rỡ. 💓
+                    </p>
+
+                    <p>
+                        Xin trân trọng cảm ơn! <br>
+                        #TNX
+                    </p>
+                </div>
+            </div>
+    </section>
+    <section id="donate" class="section-4">
+        <div class="container">
+            <h2 class="text-center">Quyên Góp</h2>
+            <p class="text-center">Cảm ơn bạn đã quan tâm đến việc quyên góp cho dự án Đông Ấm 2025. Chúng tôi xin chân
+                thành cảm ơn sự hỗ trợ của bạn!</p>
+
+            <!-- Chia thành 2 phần: Quyên góp hiện vật và Quyên góp tiền mặt -->
+            <div class="row justify-content-center">
+                <!-- Phần quyên góp hiện vật -->
+                <div class="col-md-5 donation-method-box">
+                    <div class="donation-method">
+                        <h4>1. Quyên góp hiện vật</h4>
+                        <p>Bao gồm: Chăn, màn, tất, mũ, gang tay, quần áo ấm người lớn và trẻ em (có phân loại cụ thể).
+                            Nhu yếu phẩm thiết yếu: gạo, mắm, muối, mì tôm,...</p>
+                        <p><strong>Địa chỉ gửi hàng:</strong> Cổng trường Đại học Hùng Vương - phường Nông Trang - Thành
+                            phố Việt Trì - tỉnh Phú Thọ</p>
+                        <p><strong>Người tiếp nhận:</strong> Nguyễn Khánh Ly</p>
+                        <p><strong>SĐT:</strong> 0333900703</p>
+                    </div>
+                </div>
+
+                <!-- Phần quyên góp tiền mặt -->
+                <div class="col-md-5 donation-method-box">
+                    <div class="donation-method">
+                        <h4>2. Ủng hộ tiền mặt</h4>
+                        <p>Tập thể, cá nhân ủng hộ bằng tiền mặt xin liên hệ:</p>
+                        <p><strong>Người liên hệ:</strong> Trần Anh Thư, Phó chủ nhiệm</p>
+                        <p><strong>SĐT:</strong> 0971845602</p>
+                        <p><strong>Hoặc chuyển khoản qua số tài khoản:</strong></p>
+                        <p><strong>Số tài khoản:</strong> 19071804963011 - Ngân hàng Techcombank</p>
+                        <p><strong>Nội dung chuyển khoản:</strong> Họ tên + Ủng hộ chương trình Đông Ấm 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thời gian nhận ủng hộ -->
+            <p class="text-center"><strong>⏰ Thời gian nhận ủng hộ:</strong> từ ngày 27/11/2024 đến ngày 30/12/2024.</p>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
